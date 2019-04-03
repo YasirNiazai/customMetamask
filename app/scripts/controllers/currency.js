@@ -27,9 +27,9 @@ class CurrencyController {
   constructor (opts = {}) {
     const initState = extend({
       currentCurrency: 'usd',
-      conversionRate: 0,
+      conversionRate: 10,
       conversionDate: 'N/A',
-      nativeCurrency: 'ETH',
+      nativeCurrency: 'OVX',
     }, opts.initState)
     this.store = new ObservableStore(initState)
   }
@@ -45,7 +45,8 @@ class CurrencyController {
    *
    */
   getNativeCurrency () {
-    return this.store.getState().nativeCurrency
+   // return this.store.getState().nativeCurrency
+    return "OVX"
   }
 
   /**
@@ -57,7 +58,7 @@ class CurrencyController {
   setNativeCurrency (nativeCurrency) {
     this.store.updateState({
       nativeCurrency,
-      ticker: nativeCurrency,
+      ticker: OVX,
     })
   }
 
@@ -68,7 +69,8 @@ class CurrencyController {
    *
    */
   getCurrentCurrency () {
-    return this.store.getState().currentCurrency
+    // return this.store.getState().currentCurrency
+    return "OVX"
   }
 
   /**
@@ -135,7 +137,7 @@ class CurrencyController {
       nativeCurrency = this.getNativeCurrency()
       // select api
       let apiUrl
-      if (nativeCurrency === 'ETH') {
+      if (nativeCurrency === 'OVX') {
         // ETH
         apiUrl = `https://api.infura.io/v1/ticker/eth${currentCurrency.toLowerCase()}`
       } else {
@@ -161,7 +163,7 @@ class CurrencyController {
         return
       }
       // set conversion rate
-      if (nativeCurrency === 'ETH') {
+      if (nativeCurrency === 'OVX') {
         // ETH
         this.setConversionRate(Number(parsedResponse.bid))
         this.setConversionDate(Number(parsedResponse.timestamp))

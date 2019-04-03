@@ -23,7 +23,7 @@ describe('CurrencyInput container', () => {
           metamask: {
             conversionRate: 280.45,
             currentCurrency: 'usd',
-            nativeCurrency: 'ETH',
+            nativeCurrency: 'OVX',
             preferences: {
               showFiatInTestnets: false,
             },
@@ -35,7 +35,7 @@ describe('CurrencyInput container', () => {
         expected: {
           conversionRate: 280.45,
           currentCurrency: 'usd',
-          nativeCurrency: 'ETH',
+          nativeCurrency: 'OVX',
           hideFiat: false,
         },
       },
@@ -134,7 +134,7 @@ describe('CurrencyInput container', () => {
           currentCurrency: 'usd',
           nativeCurrency: 'ETH',
           // useFiat: true,
-          nativeSuffix: 'ETH',
+          nativeSuffix: 'OVX',
           fiatSuffix: 'USD',
         },
       },
@@ -144,8 +144,8 @@ describe('CurrencyInput container', () => {
         mock: {
           stateProps: {
             conversionRate: 280.45,
-            currentCurrency: 'usd',
-            nativeCurrency: 'ETH',
+            currentCurrency: 'OVX',
+            nativeCurrency: 'OVX',
           },
           dispatchProps: {},
           ownProps: { useFiat: true },
@@ -153,9 +153,9 @@ describe('CurrencyInput container', () => {
         expected: {
           conversionRate: 280.45,
           currentCurrency: 'usd',
-          nativeCurrency: 'ETH',
+          nativeCurrency: 'OVX',
           useFiat: true,
-          nativeSuffix: 'ETH',
+          nativeSuffix: 'OVX',
           fiatSuffix: 'USD',
         },
       },

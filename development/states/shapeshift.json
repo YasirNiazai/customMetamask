@@ -157,7 +157,7 @@
           },
           "ETH": {
             "name": "Ether",
-            "symbol": "ETH",
+            "symbol": "OVX",
             "image": "https://shapeshift.io/images/coins/ether.png",
             "status": "available"
           },

@@ -100,15 +100,15 @@ export default class TokenInput extends PureComponent {
       numberOfDecimals = 2
     } else {
       // Display ETH
-      currency = ETH
+      currency = OVX
       numberOfDecimals = 6
     }
 
     const decimalEthValue = (decimalValue * selectedTokenExchangeRate) || 0
     const hexWeiValue = getWeiHexFromDecimalValue({
       value: decimalEthValue,
-      fromCurrency: ETH,
-      fromDenomination: ETH,
+      fromCurrency: OVX,
+      fromDenomination: OVX,
     })
 
     return selectedTokenExchangeRate

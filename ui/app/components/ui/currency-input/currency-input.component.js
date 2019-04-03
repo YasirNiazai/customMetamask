@@ -59,7 +59,7 @@ export default class CurrencyInput extends PureComponent {
         value: hexValue, toCurrency: currentCurrency, conversionRate, numberOfDecimals: 2,
       })
       : getValueFromWeiHex({
-        value: hexValue, toCurrency: ETH, numberOfDecimals: 6,
+        value: hexValue, toCurrency: OVX, numberOfDecimals: 6,
       })
 
     return Number(decimalValueString) || 0
@@ -91,7 +91,7 @@ export default class CurrencyInput extends PureComponent {
         value: decimalValue, fromCurrency, conversionRate, invertConversionRate: true,
       })
       : getWeiHexFromDecimalValue({
-        value: decimalValue, fromCurrency: ETH, fromDenomination: ETH, conversionRate,
+        value: decimalValue, fromCurrency: USD, fromDenomination: OVX, conversionRate,
       })
 
     this.setState({ hexValue, decimalValue })
@@ -117,7 +117,7 @@ export default class CurrencyInput extends PureComponent {
 
     if (this.shouldUseFiat()) {
       // Display ETH
-      currency = nativeCurrency || ETH
+      currency = nativeCurrency || OVX
       numberOfDecimals = 6
     } else {
       // Display Fiat
